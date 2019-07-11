@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 
 from sqlalchemy import Column, Integer, String, ForeignKey, JSON
-from sqlalchemy import func, not_
+from sqlalchemy import not_
 from sqlalchemy.orm import relationship
-from dbconnector import Base, engine, Session
+from database.dbconnector import Base
 import json
 from random import choice
 
@@ -88,6 +88,7 @@ class Content(Base):
 class User(Base):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
+    user_id = Column(Integer)
     username = Column(String)
     chat_id = Column(Integer)
     memory = Column(JSON, default=json.dumps({}))
@@ -156,7 +157,7 @@ class User(Base):
 
 if __name__ == "__main__":
     # Base.metadata.create_all(engine)
-    from dbconnector import Session
+    from database.dbconnector import Session
 
     from content_description import categories, themes, content
 

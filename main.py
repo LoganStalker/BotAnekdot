@@ -1,11 +1,8 @@
 # -*- coding:utf-8 -*-
 
 import telebot
-from random import choice
-import json
 
-from db_models import Content, Themes, ContentCategory, User
-from dbconnector import Session
+from database.db_models import Content, Themes, ContentCategory, User
 from settings import *
 
 import logging
