@@ -3,7 +3,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, JSON
 from sqlalchemy import not_
 from sqlalchemy.orm import relationship
-from database.dbconnector import Base
+from database.dbconnector import Base, Session
 import json
 from random import choice
 
